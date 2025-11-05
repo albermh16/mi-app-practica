@@ -1,0 +1,14 @@
+span.catsppales {
+        color: #333;
+        font-weight: bold;
+        font-size: .7em;
+        text-transform: uppercase;
+        font-family: "unineue", "Open Sans", sans-serif;
+        cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+

@@ -12,6 +12,6 @@ module.exports= (serverExpress)=> {
     //serverExpress.use(cookieParser()); // <---- registramos la funcion middleware para procesar cookies
 
     serverExpress.use("/api/Cliente", require('../routes/endpointsCliente.js'));
-    //serverExpress.use("/api/Tienda", require('../routes/endpointsTienda.js'));
+    serverExpress.use("/api/Tienda", require('../routes/endpointsTienda.js'));
 
 }

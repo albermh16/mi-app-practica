@@ -3,6 +3,10 @@ import Login from './components/zonaCliente/loginComponent/Login.jsx'
 import ActivarCuenta from './components/zonaCliente/registroComponent/ActivarCuenta.jsx'
 import Layout from './components/zonaTienda/LayOut/Layout.jsx'
 import Home from './components/zonaTienda/Inicio/Home.jsx'
+import ProductosCat from './components/zonaTienda/Productos/ProductosCat.jsx'
+import PedidoComp from './components/zonaTienda/Pedido/PedidoComp.jsx'
+import FinPedido from './components/zonaTienda/FinalizarPedido/FinPedidoComp/FinPedido.jsx';
+import FinPedidoOk from './components/zonaTienda/FinalizarPedido/FinPedidoOKTrasPago/FinPedidoOk.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 
@@ -19,6 +23,18 @@ const rutasAplicacion = createBrowserRouter(
             { path: 'Registro', element: <Registro /> },
             { path: 'ActivarCuenta', element: <ActivarCuenta /> }
           ]
+        },
+        {
+          path: 'Productos/:pathCategoria',
+          element: <ProductosCat />,
+          
+        },
+        { path: 'Pedido',
+          children: [
+            { path: 'PedidoActual', element: <PedidoComp/> },
+            { path:'FinalizarPedido', element:<FinPedido /> },
+            { path:'FinPedidoOK', element:<FinPedidoOk /> }
+        ]
         },
         { path:'*', element: <div><img src="/images/error404.png" alt="404 Not Found" /></div>}
       ],

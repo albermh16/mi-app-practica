@@ -1,7 +1,11 @@
 import React, { use, useState } from "react";
 import InputBox from "../../compGlobales/inputBoxComponent/InputBox";
+import useGlobalState from "../../../globalState/globalState";
+
 
 function Login() {
+
+    const { cliente, setCliente } = useGlobalState();
 
     const [login, setLogin] = useState({
         email: "",
@@ -37,6 +41,7 @@ function Login() {
                 // Manejar errores de inicio de sesión
                 console.error("Error en el inicio de sesión:", data);
             }
+            setCliente(data.datosCliente);
         } catch (error) {
             console.error("Error en la solicitud de inicio de sesión:", error);
         }
